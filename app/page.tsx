@@ -55,20 +55,38 @@ export default function Home() {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-[#0c1818] z-[90] flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"}`}>
-          {["Home", "About", "Our Story", "Programs", "Impact"].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase().replace(" ", "-")}`} 
-              className="text-white text-2xl font-bold hover:text-[#ff9d23]"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-          <button className="bg-[#ff9d23] text-white px-10 py-4 rounded-full text-xl font-bold mt-4 shadow-xl">
-            Donate Now
-          </button>
+        <div className={`fixed inset-0 min-h-screen bg-black/95 z-[150] flex flex-col transition-all duration-700 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+          <div className="flex justify-between items-center p-6 border-b border-white/10">
+            <div className="relative w-10 h-10">
+               <Image src="/logo.png" alt="Logo" fill className="object-contain" />
+            </div>
+            <button onClick={() => setMobileMenuOpen(false)} className="text-white text-3xl">✕</button>
+          </div>
+          
+          <div className="flex flex-col items-center justify-center flex-grow gap-8">
+            {[
+              { name: "Home", id: "home" },
+              { name: "About Us", id: "about" },
+              { name: "Global Goals", id: "story" },
+              { name: "Our Programs", id: "programs" },
+              { name: "Our Impact", id: "impact" },
+              { name: "Donation", id: "donation" }
+            ].map((item, i) => (
+              <a 
+                key={i} 
+                href={`#${item.id}`} 
+                className={`text-white text-4xl font-black uppercase tracking-tighter hover:text-[#ff9d23] transition-all transform ${mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            
+            <button className="bg-[#ff9d23] text-white px-12 py-4 rounded-full text-xl font-bold mt-8 shadow-2xl hover:scale-105 transition-transform">
+              Donate Now
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -106,64 +124,64 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-16 md:py-24 bg-white overflow-hidden">
+      <section id="about" className="py-12 md:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row gap-0 rounded-[30px] md:rounded-[40px] overflow-hidden shadow-2xl">
+          <div className="flex flex-col lg:flex-row gap-0 rounded-[20px] md:rounded-[40px] overflow-hidden shadow-2xl">
             {/* Left Column: White with Cross Pattern */}
-            <div className="lg:w-1/2 relative bg-white min-h-[500px] p-12 md:p-20 flex flex-col items-center justify-center overflow-hidden">
+            <div className="lg:w-1/2 relative bg-white min-h-[350px] md:min-h-[500px] p-8 md:p-20 flex flex-col items-center justify-center overflow-hidden">
                {/* Cross/Plus Pattern Background */}
-               <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px), radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }}></div>
+               <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px), radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px', backgroundPosition: '0 0, 15px 15px' }}></div>
                
                {/* About Us Header */}
-               <div className="absolute top-12 left-12 flex items-center gap-4">
-                  <div className="w-10 h-10 border-2 border-[#0c1818] rounded-full flex items-center justify-center p-1">
+               <div className="absolute top-6 left-6 md:top-12 md:left-12 flex items-center gap-3 md:gap-4">
+                  <div className="w-8 h-8 md:w-10 md:h-10 border-2 border-[#0c1818] rounded-full flex items-center justify-center p-1">
                     <Image src="/logo.png" alt="TTN" width={30} height={30} className="object-contain grayscale" />
                   </div>
-                  <h2 className="script-font text-3xl font-bold text-[#0c1818] italic">About Us</h2>
+                  <h2 className="script-font text-2xl md:text-3xl font-bold text-[#0c1818] italic">About Us</h2>
                </div>
 
-               <div className="relative z-10 w-full max-w-md">
+               <div className="relative z-10 w-full max-w-sm md:max-w-md mt-10 md:mt-0">
                   {/* Orange Corner Brackets */}
-                  <div className="absolute -top-6 -left-6 w-12 h-12 border-t-8 border-l-8 border-[#ff9d23] rounded-tl-xl"></div>
-                  <div className="absolute -top-6 -right-6 w-12 h-12 border-t-8 border-r-8 border-[#ff9d23] rounded-tr-xl"></div>
-                  <div className="absolute -bottom-6 -left-6 w-12 h-12 border-b-8 border-l-8 border-[#ff9d23] rounded-bl-xl"></div>
-                  <div className="absolute -bottom-6 -right-6 w-12 h-12 border-b-8 border-r-8 border-[#ff9d23] rounded-br-xl"></div>
+                  <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 border-t-4 md:border-t-8 border-l-4 md:border-l-8 border-[#ff9d23] rounded-tl-lg md:rounded-tl-xl"></div>
+                  <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-8 h-8 md:w-12 md:h-12 border-t-4 md:border-t-8 border-r-4 md:border-r-8 border-[#ff9d23] rounded-tr-lg md:rounded-tr-xl"></div>
+                  <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 border-b-4 md:border-b-8 border-l-4 md:border-l-8 border-[#ff9d23] rounded-bl-lg md:rounded-bl-xl"></div>
+                  <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-8 h-8 md:w-12 md:h-12 border-b-4 md:border-b-8 border-r-4 md:border-r-8 border-[#ff9d23] rounded-br-lg md:rounded-br-xl"></div>
 
                   {/* Main Image */}
-                  <div className="relative rounded-3xl overflow-hidden border-[15px] border-white shadow-2xl">
+                  <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-[8px] md:border-[15px] border-white shadow-2xl">
                      <Image
                        src="/about 1.png"
                        alt="TTN Team"
                        width={800}
                        height={600}
-                       className="object-cover w-full h-full"
+                       className="object-cover w-full h-auto aspect-[4/3]"
                      />
                   </div>
                </div>
             </div>
             
             {/* Right Column: Dark Grey Timeline */}
-            <div className="lg:w-1/2 bg-[#1a1a1a] p-12 md:p-24 text-white relative flex flex-col justify-center min-h-[600px]">
+            <div className="lg:w-1/2 bg-[#1a1a1a] p-8 md:p-24 text-white relative flex flex-col justify-center min-h-[500px] md:min-h-[600px]">
                {/* Sketchy Arrow Top Left */}
-               <div className="absolute top-10 left-10 text-[#0087aa] opacity-60">
-                  <svg width="45" height="45" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                <div className="absolute top-6 left-6 md:top-10 md:left-10 text-[#0087aa] opacity-60">
+                   <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 md:w-11 md:h-11">
                     <path d="M30 70 L50 90 L70 70 M50 90 L50 30" strokeDasharray="2 4" opacity="0.5" />
                     <path d="M20 50 L50 80 L80 50" />
                     <path d="M20 30 L50 60 L80 30" />
                   </svg>
                </div>
 
-               <div className="relative z-10 space-y-16 md:space-y-24">
-                  {/* Hand-Drawn Styled Vertical Line */}
-                  <div className="absolute top-4 left-[19px] bottom-10 w-1 bg-[#0087aa] opacity-20 rounded-full blur-[0.5px]"></div>
-                  <div className="absolute top-4 left-[19px] bottom-10 w-[1px] bg-[#0087aa] opacity-40"></div>
+               <div className="relative z-10 space-y-12 md:space-y-24 mt-8 md:mt-0">
+                  {/* Hand-Drawn Styled Vertical Line - Adjusted for mobile */}
+                  <div className="absolute top-4 left-[15px] md:left-[19px] bottom-10 w-1 bg-[#0087aa] opacity-20 rounded-full blur-[0.5px]"></div>
+                  <div className="absolute top-4 left-[15px] md:left-[19px] bottom-10 w-[1px] bg-[#0087aa] opacity-40"></div>
 
-                  {/* Item 1 */}
-                  <div className="relative pl-16">
-                     <div className="absolute top-0 left-0 w-10 h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
+                  {/* Who We Are */}
+                  <div className="relative pl-12 md:pl-16">
+                     <div className="absolute top-0 left-0 w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
+                        <div className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
                      </div>
-                     <h3 className="text-3xl md:text-4xl font-bold text-[#0087aa] mb-5 tracking-tight">Who We Are</h3>
+                     <h3 className="text-2xl md:text-4xl font-bold text-[#0087aa] mb-3 md:mb-5 tracking-tight">Who We Are</h3>
                      <p className="text-gray-300 font-light leading-relaxed max-w-lg text-sm md:text-base">
                         TTN Mission is a community-based organization dedicated to every generation. 
                         Whether you are just beginning your journey or deepening it, you belong here. We 
@@ -172,22 +190,22 @@ export default function Home() {
                   </div>
 
                   {/* Our Vision */}
-                  <div className="relative pl-16">
-                     <div className="absolute top-0 left-0 w-10 h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
+                  <div className="relative pl-12 md:pl-16">
+                     <div className="absolute top-0 left-0 w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
+                        <div className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
                      </div>
-                     <h3 className="text-3xl md:text-4xl font-bold text-[#0087aa] mb-5 tracking-tight">Our Vision</h3>
+                     <h3 className="text-2xl md:text-4xl font-bold text-[#0087aa] mb-3 md:mb-5 tracking-tight">Our Vision</h3>
                      <p className="text-gray-300 font-light leading-relaxed max-w-lg text-sm md:text-base">
                         A world transformed by the gospel and free from poverty.
                      </p>
                   </div>
 
                   {/* Our Mission */}
-                  <div className="relative pl-16">
-                     <div className="absolute top-0 left-0 w-10 h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
+                  <div className="relative pl-12 md:pl-16">
+                     <div className="absolute top-0 left-0 w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center shadow-[0_0_15px_rgba(0,183,212,0.2)]">
+                        <div className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 rounded-full bg-[#0087aa] shadow-inner"></div>
                      </div>
-                     <h3 className="text-3xl md:text-4xl font-bold text-[#0087aa] mb-5 tracking-tight">Our Mission</h3>
+                     <h3 className="text-2xl md:text-4xl font-bold text-[#0087aa] mb-3 md:mb-5 tracking-tight">Our Mission</h3>
                      <p className="text-gray-300 font-light leading-relaxed max-w-lg text-sm md:text-base">
                         To provide children and young people with an environment of opportunities 
                         to live with hope, grow in faith, develop their skills and discover their purpose.
@@ -247,9 +265,9 @@ export default function Home() {
                <div className="order-1 lg:order-2">
                  <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-1 bg-[#ff9d23] rounded-full"></div>
-                    <span className="text-[#ff9d23] font-black uppercase tracking-[0.2em] text-sm md:text-base">Strategic Intent</span>
+                    <span className="text-[#ff9d23] font-black uppercase tracking-[0.2em] text-[10px] md:text-base">Strategic Intent</span>
                  </div>
-                 <h2 className="text-4xl md:text-6xl font-black text-[#0c1818] leading-tight mb-8">
+                 <h2 className="text-3xl md:text-6xl font-black text-[#0c1818] leading-tight mb-8">
                    Our <span className="text-[#0087aa]">Global Goals</span>
                  </h2>
                  
@@ -276,8 +294,8 @@ export default function Home() {
            </div>
 
            {/* Core Values Section (Internal but distinct) */}
-           <div className="bg-[#0087aa] rounded-[40px] p-10 md:p-16 text-white text-center shadow-xl">
-             <h3 className="text-3xl md:text-5xl font-black mb-12 uppercase tracking-tight">Our Core Values</h3>
+           <div className="bg-[#0087aa] rounded-[30px] md:rounded-[40px] p-8 md:p-16 text-white text-center shadow-xl">
+             <h3 className="text-2xl md:text-5xl font-black mb-10 md:mb-12 uppercase tracking-tight">Our Core Values</h3>
              <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
                {["Faith", "Vision", "Hardwork", "Unity", "Responsibility"].map((value, i) => (
                  <div key={i} className="flex flex-col items-center gap-4 group">
@@ -341,13 +359,13 @@ export default function Home() {
       {/* Ministries/Projects Section */}
       <section className="py-24 bg-[#0c1818] text-white">
         <div className="container mx-auto px-6">
-           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-              <div className="max-w-2xl">
-                 <h2 className="text-4xl md:text-6xl font-black leading-tight">
+           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
+              <div className="max-w-2xl text-left">
+                 <h2 className="text-3xl md:text-6xl font-black leading-tight">
                     Specific <span className="text-[#ff9d23]">Ministries</span> <br/> & Projects
                  </h2>
               </div>
-              <div className="text-gray-400 font-light text-lg">
+              <div className="text-gray-400 font-light text-base md:text-lg">
                  Direct hands-on impact on the ground.
               </div>
            </div>
@@ -377,31 +395,31 @@ export default function Home() {
             </svg>
          </div>
          <div className="container mx-auto px-6 text-center">
-           <h2 className="script-font text-[#0c1818] text-4xl md:text-5xl mb-20 md:mb-32 relative inline-block">
+           <h2 className="script-font text-[#0c1818] text-3xl md:text-5xl mb-16 md:mb-32 relative inline-block">
              Our Growing <span className="text-[#0087aa] wavy-underline italic underline decoration-transparent">Impact</span>
            </h2>
            
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20">
-              <div className="space-y-4 md:space-y-6">
-                 <h3 className="text-6xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">24+</h3>
-                 <p className="text-gray-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Children Reached</p>
-              </div>
-              <div className="space-y-4 md:space-y-6">
-                 <h3 className="text-6xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">20</h3>
-                 <p className="text-gray-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Community Served</p>
-              </div>
-              <div className="space-y-4 md:space-y-6">
-                 <h3 className="text-6xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">10+</h3>
-                 <p className="text-gray-400 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Running Programs</p>
-              </div>
-           </div>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
+               <div className="space-y-3 md:space-y-6">
+                  <h3 className="text-5xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">24+</h3>
+                  <p className="text-gray-400 uppercase tracking-[0.1em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Children Reached</p>
+               </div>
+               <div className="space-y-3 md:space-y-6">
+                  <h3 className="text-5xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">20</h3>
+                  <p className="text-gray-400 uppercase tracking-[0.1em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Community Served</p>
+               </div>
+               <div className="space-y-3 md:space-y-6">
+                  <h3 className="text-5xl md:text-8xl font-black text-[#0c1818] drop-shadow-sm">10+</h3>
+                  <p className="text-gray-400 uppercase tracking-[0.1em] md:tracking-[0.3em] text-[10px] md:text-xs font-semibold">Running Programs</p>
+               </div>
+            </div>
          </div>
       </section>
 
       {/* Donation Section */}
       <section id="donation" className="py-16 md:py-24 bg-white relative">
         <div className="container mx-auto px-4 md:px-6 text-center">
-           <h2 className="script-font text-[#0c1818] text-4xl md:text-5xl mb-12 md:mb-16 relative inline-block wavy-underline decoration-transparent">
+           <h2 className="script-font text-[#0c1818] text-3xl md:text-5xl mb-8 md:mb-16 relative inline-block wavy-underline decoration-transparent">
              Donation
            </h2>
            <p className="text-gray-500 max-w-3xl mx-auto mb-12 md:mb-20 leading-relaxed font-light text-sm md:text-base">
