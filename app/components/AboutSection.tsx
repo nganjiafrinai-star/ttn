@@ -10,21 +10,7 @@ export default function AboutSection() {
                         {/* Cross/Plus Pattern Background */}
                         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px), radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px', backgroundPosition: '0 0, 15px 15px' }}></div>
 
-                        {/* About Us Header - Overlay on Image */}
-                        {/* <div className="absolute top-6 left-6 md:top-12 md:left-12 flex items-center gap-3 md:gap-4 z-20">
-                            <div className="w-8 h-8 md:w-10 md:h-10 border-2 border-white rounded-full flex items-center justify-center p-1 bg-white bg-opacity-90">
-                                <Image src="/logo.png" alt="TTN" width={30} height={30} className="object-cover grayscale" />
-                            </div>
-                            <h2 className="script-font text-2xl md:text-3xl font-bold text-white italic drop-shadow-lg">About Us</h2>
-                        </div> */}
-
                         <div className="relative z-10 w-full h-full">
-                            {/* Orange Corner Brackets */}
-                            {/* <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 border-t-4 md:border-t-8 border-l-4 md:border-l-8 border-[#ff9d23] rounded-tl-lg md:rounded-tl-xl"></div>
-                            <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-8 h-8 md:w-12 md:h-12 border-t-4 md:border-t-8 border-r-4 md:border-r-8 border-[#ff9d23] rounded-tr-lg md:rounded-tr-xl"></div>
-                            <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 border-b-4 md:border-b-8 border-l-4 md:border-l-8 border-[#ff9d23] rounded-bl-lg md:rounded-bl-xl"></div>
-                            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-8 h-8 md:w-12 md:h-12 border-b-4 md:border-b-8 border-r-4 md:border-r-8 border-[#ff9d23] rounded-br-lg md:rounded-br-xl"></div> */}
-
                             {/* Main Image - Full Size */}
                             <div className="relative w-full h-full overflow-hidden">
                                 <Image

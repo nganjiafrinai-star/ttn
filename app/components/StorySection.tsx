@@ -128,7 +128,6 @@ export default function StorySection() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );

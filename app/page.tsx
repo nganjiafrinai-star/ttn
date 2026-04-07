@@ -17,7 +17,7 @@ export default function Home() {
       <StorySection />
       <ProgramsSection />
       <MinistriesSection />
-      {/* <ImpactSection /> */}
+      <ImpactSection />
       <DonationSection />
       <Footer />
     </div>
