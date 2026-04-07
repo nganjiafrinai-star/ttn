@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
@@ -43,8 +44,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-black/50" />
             <div className="relative z-10 text-center px-6 max-w-5xl mt-12 md:mt-20">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white leading-[1.1] mb-8 tracking-tighter">
-                    Empowering Children for a <br className="hidden md:block" />
-                    Future of <span className="script-font text-[#ff9d23] italic wavy-underline inline-block mt-2">Hope.</span>
+                    Empowering Children for  a <br className="hidden md:block" />
+                    Future <span className="script-font text-[#ff9d23] italic wavy-underline inline-block mt-2">Hope.</span>
                 </h1>
                 <p className="text-white/80 text-base md:text-xl font-light italic mb-8 max-w-2xl mx-auto border-l-4 border-[#ff9d23] pl-6 bg-black/10 backdrop-blur-sm py-4 rounded-r-2xl leading-relaxed">
                     "You cannot help everyone but you can help someone, you cannot do everything but you can do something."
@@ -52,9 +53,12 @@ export default function Hero() {
             </div>
 
             {/* Decorative Circle Link */}
-            <div className="absolute bottom-12 right-12 w-32 h-32 bg-[#0087aa] rounded-full flex items-center justify-center animate-float hidden lg:flex">
-                <span className="text-white text-center font-bold text-sm leading-tight">Join Our <br /> Mission</span>
-            </div>
+            <Link 
+                href="/join" 
+                className="absolute bottom-12 right-12 w-32 h-32 bg-[#0087aa] rounded-full flex items-center justify-center animate-float hidden lg:flex hover:scale-110 transition-transform duration-500 hover:bg-[#ff9d23] group z-20"
+            >
+                <span className="text-white text-center font-bold text-sm leading-tight transition-transform group-hover:scale-110">Join Our <br /> Mission</span>
+            </Link>
         </section>
     );
 }
