@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTN Mission - Empowering Children to Discover their Purpose</title>
+    <!-- Tailwind CSS 3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff9d23;
+            --secondary: #0087aa;
+            --dark: #0c1818;
+            --dark-grey: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: var(--dark);
+        }
+
+        .script-font {
+            font-family: 'Caveat', cursive;
+        }
+
+        .wavy-underline {
+            position: relative;
+            z-index: 1;
+        }
+
+        .wavy-underline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q12.5 0 25 10 T50 10 T75 10 T100 10' fill='none' stroke='%23ff9d23' stroke-width='4'/%3E%3C/svg%3E");
+            background-size: 50px 10px;
+            z-index: -1;
+        }
+
+        .dot-pattern {
+            background-image: radial-gradient(#0087aa 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .scale-101 { transform: scale(1.01); }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .ministry-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .ministry-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-[100] bg-white/90 backdrop-blur-md shadow-md py-3">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="#home" class="relative block w-12 h-12 md:w-16 md:h-16 transition-transform hover:scale-105 active:scale-95">
+               <img src="https://ttnimpact.com/logo.png" alt="TTN Logo" class="object-contain w-full h-full" onerror="this.src='/logo.png'">
+            </a>
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#home" class="text-sm font-bold uppercase tracking-widest text-[#0c1818] hover:text-[#ff9d23] transition-colors">Home</a>
+            <a href="#about" class="text-sm font-bold uppercase tracking-widest text-[#0c1818] hover:text-[#ff9d23] transition-colors">About</a>
+            <a href="#story" class="text-sm font-bold uppercase tracking-widest text-[#0c1818] hover:text-[#ff9d23] transition-colors">Goals</a>
+            <a href="#programs" class="text-sm font-bold uppercase tracking-widest text-[#0c1818] hover:text-[#ff9d23] transition-colors">Programs</a>
+            <a href="#donate" class="bg-[#ff9d23] text-white px-8 py-3 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg hover:shadow-[#ff9d23]/40 transition-all hover:-translate-y-1">Donate Now</a>
+          </div>
+          <button class="md:hidden text-[#0c1818]">
+             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070" alt="TTN Hero" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+          <h1 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8 drop-shadow-2xl">
+            Empowering Children to <br />
+            Discover their <span class="script-font text-[#ff9d23] italic wavy-underline">Purpose.</span>
+          </h1>
+          <p class="text-white/80 text-lg md:text-2xl font-light italic mb-10 max-w-3xl mx-auto border-l-4 border-l-[#ff9d23] pl-6 bg-black/20 backdrop-blur-sm py-4 rounded-r-xl">
+             "You cannot help everyone but you can help someone, you cannot do everything but you can do something."
+          </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white overflow-hidden text-[#0c1818]">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row rounded-[40px] overflow-hidden shadow-2xl">
+            <div class="lg:w-1/2 relative bg-white p-12 md:p-20 flex flex-center items-center justify-center">
+               <div class="absolute inset-0 opacity-[0.05]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px), radial-gradient(circle, #000 1px, transparent 1px); background-size: 40px 40px; background-position: 0 0, 20px 20px;"></div>
+               <div class="relative z-10 w-full max-w-md">
+                  <div class="absolute -top-6 -left-6 w-12 h-12 border-t-8 border-l-8 border-[#ff9d23] rounded-tl-xl"></div>
+                  <div class="absolute -bottom-6 -right-6 w-12 h-12 border-b-8 border-r-8 border-[#ff9d23] rounded-br-xl"></div>
+                  <div class="relative rounded-3xl overflow-hidden border-[15px] border-white shadow-2xl">
+                     <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1000" class="object-cover w-full h-full">
+                  </div>
+               </div>
+            </div>
+            <div class="lg:w-1/2 bg-[#1a1a1a] p-12 md:p-24 text-white relative flex flex-col justify-center">
+               <div class="relative z-10 space-y-16">
+                  <div class="relative pl-16">
+                     <div class="absolute top-0 left-0 w-10 h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#0087aa]"></div>
+                     </div>
+                     <h3 class="text-3xl font-bold text-[#0087aa] mb-5 tracking-tight uppercase">Our Vision</h3>
+                     <p class="text-gray-300 font-light leading-relaxed max-w-lg">A world transformed by the gospel and free from poverty.</p>
+                  </div>
+                  <div class="relative pl-16">
+                     <div class="absolute top-0 left-0 w-10 h-10 rounded-full border-2 border-[#0087aa] bg-[#1a1a1a] flex items-center justify-center">
+                        <div class="w-3.5 h-3.5 rounded-full bg-[#0087aa]"></div>
+                     </div>
+                     <h3 class="text-3xl font-bold text-[#0087aa] mb-5 tracking-tight uppercase">Our Mission</h3>
+                     <p class="text-gray-300 font-light leading-relaxed max-w-lg">To provide children and young people with an environment of opportunities to live with hope, grow in faith, develop their skills and discover their purpose.</p>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Global Goals -->
+    <section id="story" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+           <h2 class="text-4xl md:text-6xl font-black mb-16 text-center">Our <span class="text-[#0087aa]">Global Goals</span></h2>
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#ff9d23]"><h4 class="text-xl font-bold mb-4">Discipleship Multiplication</h4><p class="text-gray-500 text-sm">Go, Teach them to obey all I have recommended you.</p></div>
+               <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#ff9d23]"><h4 class="text-xl font-bold mb-4">Orphans Care</h4><p class="text-gray-500 text-sm">Providing support and family for the fatherless children.</p></div>
+               <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#ff9d23]"><h4 class="text-xl font-bold mb-4">Talent Development</h4><p class="text-gray-500 text-sm">Identifying and nurturing artistic and athletic skills.</p></div>
+               <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#ff9d23]"><h4 class="text-xl font-bold mb-4">Intellectual Capacity</h4><p class="text-gray-500 text-sm">Developing academic and analytical capabilities.</p></div>
+               <div class="bg-white p-8 rounded-3xl shadow-lg border-t-4 border-[#ff9d23]"><h4 class="text-xl font-bold mb-4">Empowerment Support</h4><p class="text-gray-500 text-sm">Tailored projects for vulnerable women and youth.</p></div>
+           </div>
+        </div>
+    </section>
+
+    <!-- Ministries Grid -->
+    <section class="py-24 bg-[#0c1818] text-white">
+        <div class="container mx-auto px-6">
+           <h2 class="text-4xl md:text-6xl font-black mb-16">Specific <span class="text-[#ff9d23]">Ministries</span></h2>
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="ministry-card p-8 rounded-3xl"><div class="text-[#ff9d23] font-black text-xl mb-4">NP-HOH</div><h4 class="text-2xl font-bold mb-4">Homes of Hope</h4><p class="text-gray-400 text-sm">Safe orphanages for children.</p></div>
+              <div class="ministry-card p-8 rounded-3xl"><div class="text-[#ff9d23] font-black text-xl mb-4">PM</div><h4 class="text-2xl font-bold mb-4">Porridge Ministry</h4><p class="text-gray-400 text-sm">Feeding programs for children.</p></div>
+              <div class="ministry-card p-8 rounded-3xl"><div class="text-[#ff9d23] font-black text-xl mb-4">SMS</div><h4 class="text-2xl font-bold mb-4">Send Me to School</h4><p class="text-gray-400 text-sm">Fees and material support.</p></div>
+              <div class="ministry-card p-8 rounded-3xl"><div class="text-[#ff9d23] font-black text-xl mb-4">TD</div><h4 class="text-2xl font-bold mb-4">Talent Development</h4><p class="text-gray-400 text-sm">Sports, Music, and Arts clubs.</p></div>
+           </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 text-center border-t border-gray-100">
+        <p class="text-gray-400 text-sm tracking-widest font-bold uppercase">&copy; 2026 TTN MISSION. All rights reserved.</p>
+    </footer>
+</body>
+</html>
