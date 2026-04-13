@@ -34,22 +34,7 @@ export default function ProjectsPage() {
                         Discover the diverse ways we are impacting lives and building futures through our dedicated ministries.
                     </p>
                 </div>
-
-                {/* Filter Bar */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map(cat => (
-                        <button 
-                            key={cat}
-                            onClick={() => setFilter(cat)}
-                            className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
-                                filter === cat ? "bg-[#ff9d23] text-white" : "bg-white text-gray-600 hover:bg-gray-100"
-                            }`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
-
+                
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project, i) => (

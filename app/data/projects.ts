@@ -4,7 +4,7 @@ export const projectData = [
         label: "NP-HOH", 
         title: "Homes of Hope", 
         desc: "Providing safe and loving homes through our orphanages.", 
-        image: "/ttn/i20.jpeg", 
+        image: "/ttn/i33.jpeg", 
         category: "Humanitarian",
         longDesc: "Homes of Hope is a safe haven for children who have lost their parents or have been abandoned. It is more than just a shelter, it is a place where they find a home, a sense of belonging, and the care they deserve. We are committed to meeting their basic needs while creating an environment filled with warmth, love, and security. Beyond physical care, we nurture their spiritual and emotional growth by planting seeds of faith, hope, and purpose. We also invest in their future by supporting their education and encouraging their intellectual development through access to school. At Homes of Hope, we believe every child deserves not only to survive, but to grow, thrive, and dream again.",
         impact: ["12 Homes established", "150+ Children sheltered", "24/7 Professional care"]
@@ -14,7 +14,7 @@ export const projectData = [
         label: "PM", 
         title: "Porridge Ministry", 
         desc: "Critical feeding programs for hungry children across communities.", 
-        image: "/ttn/i21.jpeg", 
+        image: "/ttn/i32.jpeg", 
         category: "Nutrition",
         longDesc: "For the past few years, we have been serving in the village of Gitaramuka, an underprivileged community largely made up of the Batwa people. Many families struggle to afford even one meal a day. This reality leads to school dropouts and increased health issues among children. The Porridge Ministry was created as a response to this urgent need. Each morning, we provide a simple but vital breakfast of porridge and a donut, ensuring that every child can begin their day nourished, energized, and ready to learn. We have seen, and continue to see, the impact of this initiative. With just one daily meal, children are returning to school, staying in class, and experiencing improved health. What may seem small is, in reality, life-changing.",
         impact: ["500+ Daily meals", "8 Communities served", "30% Increase in school attendance"]
