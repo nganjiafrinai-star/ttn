@@ -53,7 +53,12 @@ export default function StoriesPage() {
                     {stories.map((story, i) => (
                         <div key={i} className="group grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
                             <div className="md:col-span-5 relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
-                                <Image src={story.image} alt={story.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <Image 
+                                    src={story.image?.trim() || "/ttn/i20.jpeg"} 
+                                    alt={story.title} 
+                                    fill 
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                                />
                             </div>
                             <div className="md:col-span-7">
                                 <div className="flex items-center gap-4 text-sm text-[#ff9d23] font-bold uppercase tracking-widest mb-4">

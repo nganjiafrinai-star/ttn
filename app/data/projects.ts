@@ -6,7 +6,7 @@ export const projectData = [
         desc: "Providing safe and loving homes through our orphanages.", 
         image: "/ttn/i20.jpeg", 
         category: "Humanitarian",
-        longDesc: "Homes of Hope is dedicated to providing a family-like environment for children who have lost their parents. We focus on healing, nutrition, and psychological support to ensure they grow up in a nurturing atmosphere.",
+        longDesc: "Homes of Hope is a safe haven for children who have lost their parents or have been abandoned. It is more than just a shelter, it is a place where they find a home, a sense of belonging, and the care they deserve. We are committed to meeting their basic needs while creating an environment filled with warmth, love, and security. Beyond physical care, we nurture their spiritual and emotional growth by planting seeds of faith, hope, and purpose. We also invest in their future by supporting their education and encouraging their intellectual development through access to school. At Homes of Hope, we believe every child deserves not only to survive, but to grow, thrive, and dream again.",
         impact: ["12 Homes established", "150+ Children sheltered", "24/7 Professional care"]
     },
     { 
@@ -16,7 +16,7 @@ export const projectData = [
         desc: "Critical feeding programs for hungry children across communities.", 
         image: "/ttn/i21.jpeg", 
         category: "Nutrition",
-        longDesc: "The Porridge Ministry ensures that no child goes to school on an empty stomach. We provide nutritious meals daily to hundreds of children, significantly improving their health and school attendance.",
+        longDesc: "For the past few years, we have been serving in the village of Gitaramuka, an underprivileged community largely made up of the Batwa people. Many families struggle to afford even one meal a day. This reality leads to school dropouts and increased health issues among children. The Porridge Ministry was created as a response to this urgent need. Each morning, we provide a simple but vital breakfast of porridge and a donut, ensuring that every child can begin their day nourished, energized, and ready to learn. We have seen, and continue to see, the impact of this initiative. With just one daily meal, children are returning to school, staying in class, and experiencing improved health. What may seem small is, in reality, life-changing.",
         impact: ["500+ Daily meals", "8 Communities served", "30% Increase in school attendance"]
     },
     { 
@@ -26,7 +26,7 @@ export const projectData = [
         desc: "Ensuring every child has access to quality education and materials.", 
         image: "/ttn/i3.jpeg", 
         category: "Education",
-        longDesc: "Education is the key to breaking the cycle of poverty. Through this initiative, we provide tuition fees, uniforms, and school supplies to children from vulnerable families.",
+        longDesc: "The Send Me to School project is dedicated to supporting children’s access to education. We assist families by covering school fees and providing the essential materials and infrastructure children need to learn in a safe and supportive environment. By removing these barriers, we give children the opportunity to attend school consistently, pursue their education with confidence, and build a foundation for a better future.",
         impact: ["200+ Scholarships", "10 Secondary graduates", "95% Graduation rate"]
     },
     { 
@@ -36,7 +36,7 @@ export const projectData = [
         desc: "Nurturing soccer, music, and arts skills in the next generation.", 
         image: "/ttn/i29.jpeg", 
         category: "Skills",
-        longDesc: "We believe every child has unique talents. Our clubs for soccer, basketball, music, and drawing give youth a platform to express themselves and develop professional skills.",
+        longDesc: "We believe that every child is uniquely gifted, with talents placed within them for a purpose. Through this program, we help children discover and nurture the abilities hidden within them. By creating opportunities for expression and growth, we guide them toward building confidence, developing their skills, and finding a sense of purpose. To support this, we have established a variety of clubs where children can explore their interests and grow their talents, including dance (both modern and traditional), art, English and French, fashion and modeling, sports (football and basketball), choir, and computer science. Our goal is not only to reveal their talents, but to empower them to use those gifts to shape their future and positively impact their community.",
         impact: ["5 Sports clubs", "Annual talent showcase", "Youth mentoring programs"]
     },
     { 

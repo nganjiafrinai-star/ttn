@@ -5,8 +5,6 @@ export default function ProgramsSection() {
         <section id="programs" className="py-24 bg-white">
             <div className="container mx-auto px-6 text-center">
                 <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="w-8 h-8 rounded-full border-2 border-[#ff9d23] flex items-center justify-center text-[#ff9d23] font-bold">★</div>
-                    <span className="text-[#ff9d23] font-black uppercase tracking-[0.2em] text-sm md:text-base">Our Framework</span>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-black text-[#0c1818] mb-8 leading-tight">
                     Our <span className="text-[#0087aa]">Programs</span>
@@ -33,7 +31,7 @@ export default function ProgramsSection() {
                             desc: "Frameworks for Women and Youth sustainable growth: FAB (Financial), and LP (Leadership)."
                         }
                     ].map((program, i) => (
-                        <div key={i} className="bg-white rounded-[30px] md:rounded-[40px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                        <div key={i} className="bg-white rounded-[30px] md:rounded-[40px] overflow-hidden transition-all duration-300 group">
                             <div className="relative h-64 overflow-hidden">
                                 <Image src={program.image} alt={program.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>

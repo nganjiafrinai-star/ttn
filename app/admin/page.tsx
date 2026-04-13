@@ -26,7 +26,7 @@ export default function AdminPage() {
             desc: formData.get("desc"),
             longDesc: formData.get("longDesc"),
             category: formData.get("category"),
-            image: formData.get("image") || "/ttn/i20.jpeg",
+            image: formData.get("image")?.toString().trim() || "/ttn/i20.jpeg",
             impact: [formData.get("impact1"), formData.get("impact2"), formData.get("impact3")].filter(Boolean)
         };
         const updated = [...projects, newProject];
@@ -44,7 +44,7 @@ export default function AdminPage() {
             date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
             excerpt: formData.get("excerpt"),
             author: "By Admin",
-            image: formData.get("image") || "/ttn/i24.jpeg"
+            image: formData.get("image")?.toString().trim() || "/ttn/i24.jpeg"
         };
         const updated = [...stories, newStory];
         setStories(updated);

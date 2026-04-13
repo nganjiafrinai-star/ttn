@@ -49,7 +49,7 @@ export default function ProjectDetailPage(props: { params: Params }) {
             
             <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
                 <Image 
-                    src={project.image} 
+                    src={project.image?.trim() || "/ttn/i20.jpeg"} 
                     alt={project.title} 
                     fill 
                     className="object-cover"

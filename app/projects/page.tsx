@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                             key={cat}
                             onClick={() => setFilter(cat)}
                             className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
-                                filter === cat ? "bg-[#ff9d23] text-white shadow-lg" : "bg-white text-gray-600 hover:bg-gray-100"
+                                filter === cat ? "bg-[#ff9d23] text-white" : "bg-white text-gray-600 hover:bg-gray-100"
                             }`}
                         >
                             {cat}
@@ -53,9 +53,14 @@ export default function ProjectsPage() {
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project, i) => (
-                        <div key={i} className="bg-white rounded-[32px] overflow-hidden shadow-xl border border-gray-100 group hover:-translate-y-2 transition-all duration-500">
+                        <div key={i} className="bg-white rounded-[32px] overflow-hidden border border-gray-100 group hover:-translate-y-2 transition-all duration-500">
                             <div className="relative h-64 overflow-hidden">
-                                <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <Image 
+                                    src={project.image?.trim() || "/ttn/i20.jpeg"} 
+                                    alt={project.title} 
+                                    fill 
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                                />
                                 <div className="absolute top-4 left-4 bg-[#ff9d23] text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider">{project.label}</div>
                             </div>
                             <div className="p-8">
